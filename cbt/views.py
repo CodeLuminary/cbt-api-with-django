@@ -9,6 +9,8 @@ def addExam(request):
     pass
 def getExams(request):
     pass
+def getExam(request):
+    pass
 def addExamQuestion(request):
     pass
 def getExamQuestions(request):
