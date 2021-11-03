@@ -5,3 +5,13 @@ class ExamSerializer(serializers.ModelSerializer):
     class Meta:
         model = Exam
         fields = '__all__'
+
+class QuestionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Question
+        fields = '__all__'
+
+class OptionsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Options
+        fields = '__all__'
