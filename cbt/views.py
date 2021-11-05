@@ -18,7 +18,7 @@ def addExam(request):
         serializer.save()
         return Response({"isSuccessful":True, "message": "Data saved successfully"})
     else:
-       return Response({"isSuccessful":True, "message": "Data saved successfully"}) 
+       return Response({"isSuccessful":True, "message": "Action Failed. Exam could not be saved"}) 
 def getExams(request):
     pass
 def getExam(request):
