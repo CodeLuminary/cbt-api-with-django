@@ -1,0 +1,173 @@
+:root{
+    --nav-width: 200px; 
+    --main-color: #333;
+    --bac-main-color: #fff;
+    --lighter-gray:#d9d9d9;
+    --light-gray:#f2f2f2;
+    --bac-color-one: #fff;
+    --icon-color:#009900;
+    --hightlight:rgba(0,230,0,0.1);
+    --lighter-green:#00b300;
+    --green-gradient: linear-gradient(96.67deg, #34a853 0, #b4d245 100%)
+}
+body {    
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    margin:0px !important;padding: 0px !important;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--nav-width);
+    height: 100vh;
+    background:  var(--light-gray);
+    padding-top: 105px;float:left;
+    border-right: 1px solid var(--lighter-gray);
+}
+.nav__link {
+    display: block;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: var(--icon-color);
+    font-weight: 500;
+    position: relative;
+}
+
+#app {
+    margin: 2em;
+    line-height: 1.5;
+    font-weight: 500;
+    margin-top: 100px;
+}
+
+a {
+    color: var(--main-color);
+}
+.menuDet{position: absolute; right: 8px; top: 70px;z-index: 10000;}
+.menuDet button{outline: none !important;border: 2px solid var(--icon-color); width: 30px;height: 30px;text-align: center;border-radius: 4px;background-color: var(--light-gray);color: var(--icon-color);font-weight: bold;cursor: pointer;}
+.menuDet > button:last-child{display: none;}
+.nav_top{color: var(--main-color);background-color: var(--bac-color-one);width:100%;height: 50px;padding-top:10px;position: fixed; box-shadow: 0px 15px 10px -15px #111;}
+.nav_top > div{right:20px;top:0px;position: absolute;padding: 20px 10px 10px;padding-right: 0px;background-color: var(--bac-main-color);} 
+.nav_top span{display: inline-block;font-size: 18px;}
+.content{float:left;width: calc(100% - var(--nav-width));height: 100vh;margin-left: var(--nav-width);}
+.highlight{ background-color: var(--hightlight);}
+.nav__link > span:first-child{width: 5px;height: 17px;display: inline-block;position:absolute;left: 0px;bottom: 15px;background-color: var(--light-gray);}
+.nav__link > i{margin-right: 5px;}
+.fa{color:var(--icon-color)}
+.highlight > span:first-child{background-color: var(--icon-color);}
+.brandname{color:var(--icon-color);font-size: 30px;font-weight: bold;margin-left: 5%;}
+.namesub{color:var(--lighter-green)}
+.nav__link:hover{background-color: var(--hightlight); color:var(--icon-color)}
+.nav__link:hover span:first-child{color:var(--icon-color) !important}
+.addUserDiv > div > h1{color: var(--icon-color);background-color: var(--light-gray);padding:10px 5%;margin: 0px;
+border-radius: 10px 10px 0px 0px; border-top: 1px solid var(--lighter-gray);}
+.require{color:var(--icon-color)}
+
+.addUserDiv > div > div{padding: 20px 5% 40px}
+.addUserDiv > div{border-radius: 10px; border: 1px solid var(--light-gray);}
+.addUserDiv input[type="text"], .addUserDiv input[type="password"], .addUserDiv input[type="email"], textarea,.addUserDiv input[type="number"],.myinp{
+    width: 400px;border-radius: 5px;padding-left: 5px;margin: 5px 0px 15px; outline: none;
+    height: 35px;background-color: var(--light-gray);border: 1px solid var(--light-gray);
+}
+.formButton{
+    font-size: 22px;
+    width: 400px; height: 50px;color: #fff; font-weight: bold;margin-top: 25px;cursor: pointer;
+    border: 2px solid var(--green-gradient);border-radius: 5px; background-image: var(--green-gradient);
+}
+.addUserDiv td, .addUserDiv th, .addUserDiv tr,.addUserDiv table{padding: 10px;border-collapse: collapse;}
+.addUserDiv table thead tr:first-child{background-color: var(--light-gray);}
+.addUserDiv table{width: 100%;border-top: 1px solid var(--lighter-gray);}
+th{color: var(--main-color)}
+.addUserDiv tr th:nth-child(2), .addUserDiv tr td:nth-child(2){
+    color: var(--lighter-green)
+}
+.btn{
+    border-radius: 5px;border: 1px solid var(--lighter-gray);padding: 8px 10px;cursor: pointer;
+}
+td{text-align: center;font-size: 16px;} tbody tr:nth-child(even){
+    background-color: var(--light-gray);
+}
+td button{
+    font-size: 20px;
+    padding:10px 20px;color: #fff;cursor: pointer;
+    border: 2px solid var(--green-gradient);border-radius: 5px; background-image: var(--green-gradient);
+}
+td a{
+    color: var(--icon-color);cursor: pointer; display: inline-block;
+}
+
+textarea{height: 150px;padding: 10px;font-family: Arial, Helvetica, sans-serif;width: 390px;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    float: left;
+    padding: 0px 10%;
+  }
+  .modal div{float:left}
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 7% 0px; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+
+  .modal-header{position: relative;border-bottom: 1px solid var(--lighter-gray);width: 100%}
+
+  .modal-header h3{
+      color: var(--icon-color);
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    position: absolute;
+    right: 2px;top: -7px;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .modal-body{
+      padding-top: 30px;width: 100%
+  }
+  
+  .optionDiv{width: 100%}
+  .mOptionDiv{margin: 10px 5px;}
+  .mOptionDiv > span{
+      height: 30px;background-color: var(--lighter-gray);
+      padding: 2px 5px;float: left;cursor: pointer;
+    }
+  .mOptionDiv > input{
+      height: 30px;width:150px;border: 1px solid var(--lighter-gray);float:left;
+      outline: none;
+    }
+  .backDiv{
+      padding: 0px 10px 10px; border-bottom: 1px solid var(--lighter-gray);
+      margin-bottom: 10px;
+  }
+  .backDiv > a{
+      padding: 5px 20px; border-width: 0px;border-radius: 7px;cursor: pointer;
+      background-color: var(--lighter-gray);display: inline-block;
+  }
+  a{text-decoration: none;}
