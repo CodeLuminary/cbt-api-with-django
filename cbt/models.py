@@ -16,3 +16,9 @@ class Options(models.Model):
     questionId = models.ForeignKey(Question, on_delete=models.CASCADE)
     questionPosition = models.IntegerField()
     option: models.TextField()
+
+class Users(models.Model):
+    name=models.CharField(max_length=200)
+    email=models.EmailField(max_length=200)
+    password=models.CharField(max_length=200)
+    isEnabled = models.BooleanField()

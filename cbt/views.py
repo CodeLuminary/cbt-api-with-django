@@ -7,9 +7,12 @@ from .serializers import *
 # Create your views here.
 @api_view(['GET'])
 def getUsers(request):
-    pass
+    users = Users.object.all()
+    serializer = UserSerializer(users, many=True)
+    return Response(serializer.data)
 def addUser(request):
     pass
+
 @api_view(['POST'])
 def addExam(request):
     serializer = ExamSerializer(data=request.data)
@@ -19,10 +22,15 @@ def addExam(request):
         return Response({"isSuccessful":True, "message": "Data saved successfully"})
     else:
        return Response({"isSuccessful":True, "message": "Action Failed. Exam could not be saved"}) 
+
 def getExams(request):
     pass
-def getExam(request):
-    pass
+
+def getExam(request, pk):
+    exam = Exam.objects.get(id=pk)
+    serializer = ExamSerializer(exam, many=False)
+    return Response(serializer.data)
+
 def addExamQuestion(request):
     pass
 def getExamQuestions(request):
