@@ -10,8 +10,15 @@ def getUsers(request):
     pass
 def addUser(request):
     pass
+@api_view(['POST'])
 def addExam(request):
-    pass
+    serializer = ExamSerializer(data=request.data)
+
+    if serializer.is_valid():
+        serializer.save()
+        return Response({"isSuccessful":True, "message": "Data saved successfully"})
+    else:
+       return Response({"isSuccessful":True, "message": "Data saved successfully"}) 
 def getExams(request):
     pass
 def getExam(request):
