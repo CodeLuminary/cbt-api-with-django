@@ -40,3 +40,16 @@ def userLogin(request):
     pass
 def login(request):
     pass
+
+@api_view(['POST'])
+def editUser(request,pk):
+    user = Users.Object.get(id=pk)
+    serializer = UserSerializer(instance=user,data=request.data)
+
+    if serializer.is_valid():
+        serializer.save()
+        return Response({"isSuccessful":True, "message": "Data saved successfully"})
+    else:
+       return Response({"isSuccessful":True, "message": "Action Failed. Exam could not be saved"}) 
+
+
